@@ -18,5 +18,5 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Run ML pipeline
         run: |
-          python model.py 
-					cat result.txt >> README.md
+          python model.py
+          cat result.txt >> README.md
