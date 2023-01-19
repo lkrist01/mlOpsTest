@@ -74,4 +74,4 @@ if __name__ == '__main__':
     df_test["anomaly"] = model.predict_outliers(df_test)
     print(df_test)
     
-    df.to_csv(r"result.csv", sep=' ', index=False, header=False)
+    df.to_csv(r"result.csv", sep=' ', index=False)
