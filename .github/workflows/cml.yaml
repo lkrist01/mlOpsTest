@@ -1,18 +1,27 @@
 name: mlops-example-test
+
 on: [push]
+
 jobs:
-  run:
+  build:
+  
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          # Semantic version range syntax or exact version of a Python version
+          python-version: '3.8'
+					
       - uses: iterative/setup-cml@v1
       - name: Install Dependencies
-        
         run: |
           python -m pip install --upgrade pip
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Run ML pipeline
         run: |
-          python model.py >> README.md
+          python model.py 
+					cat result.txt >> README.md
