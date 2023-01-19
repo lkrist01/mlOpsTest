@@ -1,7 +1,7 @@
 name: mlops-example-test
 on: [push]
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,4 +19,4 @@ jobs:
       - name: Run ML pipeline
         run: |
           python model.py
-          cat result.txt >> README.md
+          cat result.csv >> README.md
