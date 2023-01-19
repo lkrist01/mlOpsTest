@@ -73,3 +73,5 @@ if __name__ == '__main__':
 
     df_test["anomaly"] = model.predict_outliers(df_test)
     print(df_test)
+    
+    np.savetxt(r'result.txt', df_test.values, fmt='%d')
