@@ -22,4 +22,4 @@ jobs:
       - name: Write CML report
         run: |
           # Post reports as comments in GitHub PRs
-          cat result.csv >> report.md
+          cat result.csv >> README.md
