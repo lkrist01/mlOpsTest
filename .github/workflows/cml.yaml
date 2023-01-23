@@ -21,7 +21,7 @@ jobs:
           python model.py
       - name: Write CML report
         env:
-          REPO_TOKEN: ${{ secrets.TOKEN }}
+          REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           # Post reports as comments in GitHub PRs
           echo "## Results" > README.md
