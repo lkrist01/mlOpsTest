@@ -26,5 +26,5 @@ jobs:
           # Post reports as comments in GitHub PRs
           echo "## Results" > README.md
           cat result.csv >> README.md
-          cml-send-comment README.md
+          cml comment update README.md
           
