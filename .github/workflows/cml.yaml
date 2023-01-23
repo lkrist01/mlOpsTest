@@ -20,11 +20,8 @@ jobs:
         run: |
           python model.py
       - name: Write CML report
-        env:
-          REPO_TOKEN: ${{ secrets.API_TOKEN }}
         run: |
           # Post reports as comments in GitHub PRs
           echo "## Results" > README.md
           cat result.csv >> README.md
-          cml comment create README.md
           
