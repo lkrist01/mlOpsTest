@@ -69,6 +69,7 @@ if __name__ == '__main__':
     df["anomaly"]= model.predict_outliers(df)
     df["md"] = md
 
+    
     print(df.head(), "\n Threshold = ", model.threshold)
 
     df_test["anomaly"] = model.predict_outliers(df_test)
