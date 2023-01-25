@@ -21,6 +21,10 @@ jobs:
           python model.py
       - name: Lint Code base
         uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: experiment
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - name: Write CML report
         env:
           REPO_TOKEN: ${{ secrets.TOKEN }}
