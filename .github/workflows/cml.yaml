@@ -19,6 +19,8 @@ jobs:
       - name: Run ML pipeline
         run: |
           python model.py
+      - name: Lint Code base
+        uses: github/super-linter@v4
       - name: Write CML report
         env:
           REPO_TOKEN: ${{ secrets.TOKEN }}
